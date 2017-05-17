@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Youtube Downloader</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/static/styles/main.css">
+</head>
+<body>
+	<h1>Youtube Downloader</h1>
+	{% if filename %}
+	<br><span> 影片名稱： {{ filename }}.mp4 <br><br> 已下載完成 </span><br><br>
+	{% endif %}
+	<form action="/Downloader" method="POST">
+		<button type="downloader">回到首頁</button><br><br>
+	</form>
+</body>
+</html>
