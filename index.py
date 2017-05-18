@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory, g
 from pytube import YouTube
 import os
-
+import urllib.parse as up
 
 app = Flask(__name__)
 
@@ -86,13 +86,33 @@ def post_download():
 	
 	video.download('./download')
 
-	os.rename("./download/"+filename+".mp4", "./download/1.mp4")
+	#os.rename("./download/"+filename+".mp4", "./download/1.mp4")
 	##return redirect(url_for('done', filename=filename))
-	return redirect(url_for('downloader', filename="1.mp4"))
+	#return redirect(url_for('downloader', filename="1.mp4"))
 
-@app.route("/downloader/<filename>")
+	#filename = filename.encode('uft-8')
+	#filename = filename.decode('latin1')
+	filename = filename+".mp4"
+	#filename = filename.encode('Big5')
+
+	#filename=filename.encode("latin-1","ignore")
+
+	print (filename)
+	return send_from_directory(dirpath,filename,as_attachment=True)
+
+	#filename = up.quote(filename)
+	#return redirect(url_for('downloader', filename=filename))
+
+@app.route('/downloader/<filename>')
 def downloader(filename):
-    return send_from_directory(dirpath,filename,as_attachment=True)
+
+	filename = up.unquote(filename)
+	#filename = filename.encode('utf8')
+	filename = filename+".mp4"
+	#print (filename)
+
+	#filename = up.unquote(filename)
+	return send_from_directory(dirpath,filename,as_attachment=True)
     #os.remove("./download/1.mp4")
 
 if __name__ == '__main__':
