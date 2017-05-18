@@ -6,11 +6,20 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/static/styles/main.css">
 </head>
-<body>
-	<h1>Youtube Downloader</h1>
+<body bgcolor="#cccccc" background="http://saintseiya-gold.com/img/news/chara_list.png">
+	<hr size="5" align="center" noshade width="90%" color="white">
+	<h1>
+	<font color="white">Youtube Downloader
+	</font>
+	</h1>
+	<hr size="5" align="center" noshade width="90%" color="white">
 	{% if not resolutions0 %}
 	<form action="/sumbit" method="POST">
-		<label for="">請輸入網址：</label>
+		<label for="">
+		<font color="white">
+		請輸入網址：
+		</font>
+		</label>
 		<input type="text" name="url">
 		<button type="sumbit">取得畫質種類</button>
 	</form>
