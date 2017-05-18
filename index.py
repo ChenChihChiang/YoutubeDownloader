@@ -97,7 +97,7 @@ def post_download():
 
 	#filename=filename.encode("latin-1","ignore")
 
-	print (filename)
+	#print (filename)
 	return send_from_directory(dirpath,filename,as_attachment=True)
 
 	#filename = up.quote(filename)
