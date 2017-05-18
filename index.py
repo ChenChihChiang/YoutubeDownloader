@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory, g
 from pytube import YouTube
 import os
-import urllib.parse as up
+#import urllib.parse as up
 
 app = Flask(__name__)
 
@@ -106,7 +106,7 @@ def post_download():
 @app.route('/downloader/<filename>')
 def downloader(filename):
 
-	filename = up.unquote(filename)
+	#filename = up.unquote(filename)
 	#filename = filename.encode('utf8')
 	filename = filename+".mp4"
 	#print (filename)
