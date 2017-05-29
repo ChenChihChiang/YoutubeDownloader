@@ -64,12 +64,12 @@ def post_download():
 
 	return send_from_directory(dirpath,filename,as_attachment=True)
 
-@app.route('/downloader/<filename>')
-def downloader(filename):
+#@app.route('/downloader/<filename>')
+#def downloader(filename):
 
-	filename = filename+".mp4"
+#	filename = filename+".mp4"
 
-	return send_from_directory(dirpath,filename,as_attachment=True)
+#	return send_from_directory(dirpath,filename,as_attachment=True)
 
 if __name__ == '__main__':
 	app.run(host='0.0.0.0',port=9000,debug=True)
